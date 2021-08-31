@@ -20,7 +20,7 @@ This repository is maintained by [shopsys/shopsys](https://github.com/shopsys/sh
 First download this repository so you can use the tools (eg. into `~/monorepo-tools`).
 
 ```
-git clone https://github.com/shopsys/monorepo-tools ~/monorepo-tools
+git clone https://github.com/egovernments/monorepo-tool.git ~/monorepo-tools
 ```
 
 ### 2. Preparing an empty repository with added remotes
@@ -30,11 +30,22 @@ You can add as many remotes as you want.
 
 In this example we will prepare 3 packages from github for merging into monorepo.
 
+Create a directory in your local machine where you want the local copy of the Git Monorepo should be
+mkdir 
+
 ```
+mkdir my-mono-repo
+cd my-mono-repo
+
 git init
-git remote add main-repository http://github.com/vendor/main-repository.git
-git remote add package-alpha http://github.com/vendor/alpha.git
-git remote add package-beta http://github.com/vendor/beta.git
+
+git remote add core-services https://github.com/egovernments/core-services.git
+git remote add business-services https://github.com/egovernments/business-services.git
+git remote add municipal-services https://github.com/egovernments/municipal-services.git
+git remote add frontend https://github.com/egovernments/frontend.git
+git remote add utilities https://github.com/egovernments/utilities.git
+
+
 git fetch --all --no-tags
 ```
 
